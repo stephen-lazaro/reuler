@@ -7,12 +7,22 @@ fn palindromic_product (x: i64, y: i64) -> bool {
     is_palindrome (x*y)
 }
 
-pub fn do_ex () -> i64 {
-    let pair = (0, 0);
+fn min (x: i64, y: i64) -> i64 {
+    if x > y { y } else { x }
+}
+
+fn max (x: i64, y: i64) -> i64 {
+    if x > y { x } else { y }
+}
+
+pub fn do_ex () -> (i64, i64) {
+    let mut pair = (0, 0);
     for i in 999..1 {
-        for j in 999..1 {
-            if palindromic_product(i*j) {
-                pair = (i, j);
+        // By symmetry, only need those less than i
+        for j in i..1 {
+            if palindromic_product(i, j) {
+                // return lesser on left
+                pair = (min (j, i), max (j, i));
                 break;
             }
         }
