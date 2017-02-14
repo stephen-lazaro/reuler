@@ -1,7 +1,7 @@
 mod eulers;
-use eulers::two;
+use eulers::three;
 
 fn main () {
-    let result = two::do_ex();
+    let result = three::do_ex();
     println! ("Latest Euler is {0}", result.to_string());
 }
