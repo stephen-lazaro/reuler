@@ -13,13 +13,7 @@ mod tests {
     }
 
     #[test]
-    fn test_shared_one () {
-        println!("{:?}", super::eulers::shared::primes::prime_factors(5));
-        assert!(super::eulers::shared::primes::prime_factors(5) == [5])
-    }
-    #[test]
-    fn test_shared_two () {
-        println!("{:?}", super::eulers::shared::primes::prime_factors(6));
-        assert!(super::eulers::shared::primes::prime_factors(6) == [2, 3])
+    fn test_three () {
+        assert!(super::eulers::three::do_ex() == 6857)
     }
 }
