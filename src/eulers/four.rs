@@ -1,6 +1,8 @@
- // no deriving show :(
+extern crate num;
+use self::num::traits::Num;
+
  #[derive(Debug)]
-pub struct ProdPair <a> (a, a);
+pub struct ProdPair <a : Num> (a, a);
 
 fn is_palindrome (num: i64) -> bool {
     // Eventually, I'll need this to work
