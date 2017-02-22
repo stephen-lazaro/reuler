@@ -5,7 +5,8 @@ use self::num::traits::Num;
  #[derive(Debug, PartialEq, Eq)]
 pub struct ProdPair <a : Num> (pub a, pub a);
 
-fn is_palindrome (digits: Vec <i64>) -> bool {
+fn is_palindrome <a : Eq> (digits: Vec <a>) -> bool {
+    // check list is palindomic
     true
 }
 
@@ -16,7 +17,6 @@ fn digits (a: i64) -> Vec <i64> {
 }
 
 fn is_palindrome_pair (num: i64) -> bool {
-    // Eventually, I'll need this to work
     is_palindrome (digits (num))
 }
 
