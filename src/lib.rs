@@ -16,4 +16,11 @@ mod tests {
     fn test_three () {
         assert!(super::eulers::three::do_ex() == 6857)
     }
+
+    // Test will need to be fixed when answer is known
+    #[test]
+    fn test_four () {
+        let answer = super::eulers::four::ProdPair (6, 7);
+        assert!(super::eulers::four::do_ex() != answer)
+    }
 }
