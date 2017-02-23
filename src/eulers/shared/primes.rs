@@ -1,3 +1,20 @@
+// It should be possible to generalize over integer types
+// extern crate num;
+// use num::Integral;
+//
+// pub fn eratosthenes <A : Integral> (bound: A) -> Vec <bool> {
+//     let sqrt_bound = (bound as f32) .sqrt () as i32;
+//     let mut primes = vec! [true; (sqrt_bound - 2) as usize];
+//     for divisor in 2 .. sqrt_bound {
+//         let mut factor = 1;
+//         while factor*divisor < sqrt_bound {
+//             primes [(factor*divisor - 2) as usize] = false;
+//             factor += 1;
+//         }
+//     }
+//     primes
+// }
+
 pub fn eratosthenes32 (bound: i32) -> Vec <bool> {
     let sqrt_bound = (bound as f32) .sqrt () as i32;
     let mut primes = vec! [true; (sqrt_bound - 2) as usize];

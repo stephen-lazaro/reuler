@@ -1,18 +1,23 @@
 extern crate num;
 use self::num::traits::Num;
 
-// I legit hate this compiler signal syntax...
- #[derive(Debug, PartialEq, Eq)]
-pub struct ProdPair <a : Num> (pub a, pub a);
+// I legit hate this type class derivation syntax...
+# [derive (Debug, PartialEq, Eq)]
+pub struct ProdPair <A : Num> (pub A, pub A);
 
-fn is_palindrome <a : Eq> (digits: Vec <a>) -> bool {
-    // check list is palindomic
-    true
+pub fn is_palindrome <A : Clone + PartialEq> (digits: Vec <A>) -> bool {
+    let mut reversed: Vec <A> = digits .clone ();
+    reversed .reverse ();
+    digits == reversed
 }
 
-fn digits (a: i64) -> Vec <i64> {
-    let digits = vec! [0; 0];
-    // extract digits
+pub fn digits (a: i64) -> Vec <i64> {
+    let mut digits = Vec :: new ();
+    let mut inter = a;
+    while inter != 0 {
+        digits .push (inter % 10);
+        inter = inter / 10;
+    }
     digits
 }
 
@@ -34,9 +39,9 @@ fn max (x: i64, y: i64) -> i64 {
 
 pub fn do_ex () -> ProdPair <i64> {
     let mut pair = ProdPair (0, 0);
-    for i in 999..1 {
+    for i in (100 .. 999) .rev () {
         // By symmetry, only need those less than i
-        for j in i..1 {
+        for j in (100 .. i) .rev () {
             if palindromic_product (i, j) {
                 // return lesser on left
                 pair = ProdPair (min (j, i), max (j, i));
