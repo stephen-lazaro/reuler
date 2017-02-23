@@ -20,8 +20,8 @@ mod tests {
     // Test will need to be fixed when answer is known
     #[test]
     fn test_four () {
-        let answer = super::eulers::four::ProdPair (6, 7);
-        assert!(super::eulers::four::do_ex() != answer)
+        let answer = super::eulers::four::ProdPair (913, 993, 906609);
+        assert!(super::eulers::four::do_ex() == answer)
     }
 
     #[test]
@@ -54,4 +54,5 @@ mod tests {
         let mock = 334;
         assert!(super::eulers::four::digits(mock) == vec![4, 3, 3])
     }
+
 }
