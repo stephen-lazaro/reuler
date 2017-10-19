@@ -1,6 +1,10 @@
 extern crate num;
 use self::num::traits::Num;
 
+/**
+ * Finds largest palindromic product
+ */
+
 // I legit hate this type class derivation syntax...
 # [derive (Debug, PartialEq, Eq)]
 pub struct ProdPair <A : Num> (pub A, pub A, pub A);
