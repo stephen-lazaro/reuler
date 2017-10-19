@@ -6,7 +6,7 @@ mod tests {
     use eulers::two;
     use eulers::three;
     use eulers::four;
-    //use eulers::five;
+    use eulers::five;
 
     #[test]
     fn test_one () {
@@ -23,11 +23,16 @@ mod tests {
         assert!(three::do_ex() == 6857)
     }
 
-    // Test will need to be fixed when answer is known
     #[test]
     fn test_four () {
         let answer = four::ProdPair (913, 993, 906609);
         assert!(four::do_ex() == answer)
+    }
+
+    #[test]
+    fn test_five () {
+        let answer = five::do_ex();
+        assert!(true)
     }
 
     #[test]
@@ -61,4 +66,9 @@ mod tests {
         assert!(four::digits(mock) == vec![4, 3, 3])
     }
 
+    #[test]
+    fn test_divisor_power () {
+        let mock = 27;
+        assert!(five::divisor_power(mock, 3) == 3);
+    }
 }

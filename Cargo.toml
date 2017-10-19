@@ -5,3 +5,4 @@ authors = ["Stephen Lazaro <stephen.lazaro@gmail.com>"]
 
 [dependencies]
 num = "0.1.36"
+quickcheck = "0.3"

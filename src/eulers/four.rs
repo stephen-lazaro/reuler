@@ -1,4 +1,6 @@
 extern crate num;
+use std::cmp::max;
+use std::cmp::min;
 use self::num::traits::Num;
 
 /**
@@ -39,14 +41,6 @@ fn is_palindrome_pair (num: i64) -> bool {
 
 fn palindromic_product (x: i64, y: i64) -> bool {
     is_palindrome_pair (x * y)
-}
-
-fn min (x: i64, y: i64) -> i64 {
-    if x > y { y } else { x }
-}
-
-fn max (x: i64, y: i64) -> i64 {
-    if x > y { x } else { y }
 }
 
 pub fn do_ex () -> ProdPair <i64> {
