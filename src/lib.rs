@@ -69,6 +69,31 @@ mod tests {
     #[test]
     fn test_divisor_power () {
         let mock = 27;
-        assert!(five::divisor_power(mock, 3) == 3);
+        assert!(five::divisor_power(mock, 3) == 3)
+    }
+
+    #[test]
+    fn test_divisor_power_2 () {
+        let mock = 2432902008176640000;
+        println!("{}", five::divisor_power(mock, 2).to_string());
+        assert!(five::divisor_power(mock, 2) > 0)
+    }
+
+    #[test]
+    fn test_gcd () {
+        let mock = five::gcd(2, 3);
+        assert!(mock == 1)
+    }
+
+    #[test]
+    fn test_gcd_2 () {
+        let mock = five::gcd(27, 9);
+        assert!(mock == 9);
+    }
+
+    #[test]
+    fn test_gcd_3 () {
+        let mock = five::gcd(32, 12);
+        assert!(mock == 4);
     }
 }

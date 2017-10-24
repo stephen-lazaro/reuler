@@ -28,8 +28,8 @@ pub fn eratosthenes32 (bound: i32) -> Vec <bool> {
     primes
 }
 
-pub fn eratosthenes64 (bound: i64) -> Vec <bool> {
-    let sqrt_bound = (bound as f64) .sqrt () as i64;
+pub fn eratosthenes64 (bound: u64) -> Vec <bool> {
+    let sqrt_bound = (bound as f64) .sqrt () as u64;
     let mut primes = vec! [true; (sqrt_bound - 2) as usize];
     for divisor in 2 .. sqrt_bound {
         let mut factor = 2;
@@ -52,10 +52,10 @@ pub fn prime_factors32 (prod: i32) -> Vec <i32> {
     factors
 }
 
-pub fn prime_factors (prod: i64) -> Vec <i64> {
+pub fn prime_factors (prod: u64) -> Vec <u64> {
     let subprimes = eratosthenes64 (prod);
-    let mut factors: Vec <i64> = vec! [];
-    for i in 2..((prod as f64).sqrt() as i64) {
+    let mut factors: Vec <u64> = vec! [];
+    for i in 2..((prod as f64).sqrt() as u64) {
         if subprimes[(i - 2) as usize] && prod % i == 0 {
             factors.push(i);
         }
@@ -63,10 +63,10 @@ pub fn prime_factors (prod: i64) -> Vec <i64> {
     factors
 }
 
-pub fn primes_under_x (bound: i64) -> Vec <i64> {
+pub fn primes_under_x (bound: u64) -> Vec <u64> {
     // arbitrarily chosen correction factor to guarantee sufficient primes
     let subprimes = eratosthenes64 (100*bound);
-    let mut under_bound: Vec <i64> = vec! [];
+    let mut under_bound: Vec <u64> = vec! [];
     for i in 2..bound {
         if subprimes[(i - 2) as usize] {
             println!("{}", i.to_string());
@@ -75,3 +75,4 @@ pub fn primes_under_x (bound: i64) -> Vec <i64> {
     }
     under_bound
 }
+
