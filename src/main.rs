@@ -1,3 +1,4 @@
+#![feature(inclusive_range_syntax)]
 mod eulers;
 
 fn main () {
@@ -6,5 +7,6 @@ fn main () {
     println! ("Third Euler is {0}", eulers::three::do_ex().to_string());
     println! ("Fourth Euler is {:?}", eulers::four::do_ex());
     println! ("Examine gcd {}", eulers::five::gcd(27, 9));
-    println! ("Fifth Euler is {:?}", eulers::five::do_ex());
+    println! ("Fifth Euler is {}", eulers::five::do_ex());
+    println! ("Sixth Euler is {}", eulers::six::do_ex());
 }
