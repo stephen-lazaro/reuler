@@ -14,6 +14,9 @@
 //     }
 //     primes
 // }
+//
+
+use std::collections::HashSet;
 
 pub fn eratosthenes32 (bound: i32) -> Vec <bool> {
     let sqrt_bound = (bound as f32) .sqrt () as i32;
@@ -52,27 +55,28 @@ pub fn prime_factors32 (prod: i32) -> Vec <i32> {
     factors
 }
 
-pub fn prime_factors (prod: u64) -> Vec <u64> {
+pub fn prime_factors (prod: u64) -> HashSet <u64> {
     let subprimes = eratosthenes64 (prod);
-    let mut factors: Vec <u64> = vec! [];
+    let mut factors: HashSet <u64> = HashSet::new(); 
     for i in 2..((prod as f64).sqrt() as u64) {
         if subprimes[(i - 2) as usize] && prod % i == 0 {
-            factors.push(i);
+            factors.insert(i);
         }
     }
     factors
 }
 
-pub fn primes_under_x (bound: u64) -> Vec <u64> {
-    // arbitrarily chosen correction factor to guarantee sufficient primes
+pub fn primes_under (bound: u64) -> HashSet <u64> {
     let subprimes = eratosthenes64 (100*bound);
-    let mut under_bound: Vec <u64> = vec! [];
+    let mut factors: HashSet <u64> = HashSet::new(); 
     for i in 2..bound {
-        if subprimes[(i - 2) as usize] {
-            println!("{}", i.to_string());
-            under_bound.push(i)
+        match subprimes.get((i - 2) as usize) {
+            Some(is_prime) => 
+                if *is_prime {
+                    factors.insert(i);
+                }
+            None => ()
         }
     }
-    under_bound
+    factors
 }
-
