@@ -9,4 +9,5 @@ fn main () {
     println! ("Examine gcd {}", eulers::five::gcd(27, 9));
     println! ("Fifth Euler is {}", eulers::five::do_ex());
     println! ("Sixth Euler is {}", eulers::six::do_ex());
+    println! ("Seventh Euler is {}", eulers::seven::do_ex());
 }

@@ -8,6 +8,8 @@ mod tests {
     use eulers::three;
     use eulers::four;
     use eulers::five;
+    use eulers::six;
+    use eulers::seven;
 
     #[test]
     fn test_one () {
@@ -34,6 +36,18 @@ mod tests {
     fn test_five () {
         let answer = 232792560;
         assert!(five::do_ex() == answer)
+    }
+
+    #[test]
+    fn test_six () {
+        let answer = 25164150;
+        assert!(six::do_ex() == answer)
+    }
+
+    #[test]
+    fn test_seven () {
+        let answer = 104743;
+        assert!(seven::do_ex() == answer)
     }
 
     #[test]

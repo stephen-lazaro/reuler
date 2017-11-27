@@ -55,6 +55,17 @@ pub fn prime_factors32 (prod: i32) -> Vec <i32> {
     factors
 }
 
+pub fn ordered_primes_under (prod: u64) -> Vec <u64> {
+    let subprimes = eratosthenes64 (prod);
+    let mut factors: Vec <u64> = vec! [];
+    for i in 2..((prod as f64).sqrt() as u64) {
+        if subprimes[(i - 2) as usize] {
+            factors.push(i);
+        }
+    }
+    factors
+}
+
 pub fn prime_factors (prod: u64) -> HashSet <u64> {
     let subprimes = eratosthenes64 (prod);
     let mut factors: HashSet <u64> = HashSet::new(); 
