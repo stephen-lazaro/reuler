@@ -4,25 +4,34 @@ matrix:
       rust: beta
       script:
         - cargo build --verbose
+        - cargo run
         - cargo test --verbose
     - language: rust
       rust: nightly
       script:
         - cargo build --verbose
+        - cargo run
         - cargo test --verbose
     - language: rust
       rust: stable
       script:
         - cargo build --verbose
+        - cargo run
         - cargo test --verbose
     - language: node_js
       node_js:
         - "8"
+      before_script:
+        - rustup update nightly
+        - cargo install cargo-wa
+        - cargo wa setup
       script:
+        - rustc +nightly --target wasm32-unknown-unknown ./src/lib.rs --crate-type=cdylib -O -o ./tests,wasm
         - npm test
   allow_failures:
     - rust: beta
     - rust: stable
+    - node_js: 8
 
 sudo: false
 
