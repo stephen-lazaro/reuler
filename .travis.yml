@@ -3,17 +3,16 @@ matrix:
     - language: rust
       rust:
         - stable
+        - beta
         - nightly
       script:
-        - cargo build
-        - cargo test
+        - cargo build --verbose
+        - cargo test --verbose
     - language: node_js
       node_js:
         - "8"
       script:
         - npm test
-  allow_failures:
-    - rust: stable
 
 sudo: false
 
