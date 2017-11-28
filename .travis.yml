@@ -1,14 +1,17 @@
 matrix:
   include:
-    - rust: beta
+    - language: rust
+      rust: beta
       script:
         - cargo build --verbose
         - cargo test --verbose
-    - rust: nightly
+    - language: rust
+      rust: nightly
       script:
         - cargo build --verbose
         - cargo test --verbose
-    - rust: stable
+    - language: rust
+      rust: stable
       script:
         - cargo build --verbose
         - cargo test --verbose
