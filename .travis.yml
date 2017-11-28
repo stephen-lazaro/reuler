@@ -22,7 +22,7 @@ matrix:
       node_js:
         - "8"
       before_script:
-        -  curl https://sh.rustup.rs -sSf | sh
+        - curl https://sh.rustup.rs -sSf | sh -s -- --default-toolchain nightly
         - rustup update nightly
         - cargo install cargo-wa
         - cargo wa setup
@@ -32,7 +32,7 @@ matrix:
   allow_failures:
     - rust: beta
     - rust: stable
-    - node_js: 8
+    - node_js: "8"
 
 sudo: false
 
