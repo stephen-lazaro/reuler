@@ -1,0 +1,24 @@
+{
+  "name": "reuler",
+  "version": "1.0.0",
+  "description": "Some WASM rust experiments",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"true\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/stephen-lazaro/reuler.git"
+  },
+  "keywords": [
+    "math",
+    "rust",
+    "wasm"
+  ],
+  "author": "Stephen Lazaro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/stephen-lazaro/reuler/issues"
+  },
+  "homepage": "https://github.com/stephen-lazaro/reuler#readme"
+}

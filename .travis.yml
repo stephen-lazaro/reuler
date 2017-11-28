@@ -3,14 +3,12 @@ matrix:
     - language: rust
       rust:
         - stable
-        - beta
         - nightly
     - language: node_js
       node_js:
         - "8"
   allow_failures:
     - rust: stable
-    - rust: beta
 
 sudo: false
 
