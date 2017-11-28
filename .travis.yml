@@ -20,6 +20,9 @@ matrix:
         - "8"
       script:
         - npm test
+  allow_failures:
+    - rust: beta
+    - rust: stable
 
 sudo: false
 
