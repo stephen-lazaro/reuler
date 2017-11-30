@@ -21,13 +21,7 @@ matrix:
     - language: node_js
       node_js:
         - "8"
-      before_script:
-        - curl https://sh.rustup.rs -sSf | sh -s -- --default-toolchain nightly
-        - rustup update nightly
-        - cargo install cargo-wa
-        - cargo wa setup
       script:
-        - rustc +nightly --target wasm32-unknown-unknown ./src/lib.rs --crate-type=cdylib -O -o ./tests,wasm
         - npm test
   allow_failures:
     - rust: beta
