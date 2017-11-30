@@ -1,4 +1,6 @@
 #![feature(inclusive_range_syntax)]
+#![feature(iterator_step_by)]
+#[macro_use] extern crate itertools;
 mod eulers;
 
 fn main () {
@@ -11,4 +13,5 @@ fn main () {
     println! ("Sixth Euler is {}", eulers::six::do_ex());
     println! ("Seventh Euler is {}", eulers::seven::do_ex());
     println! ("Eigth Euler is {}", eulers::eight::do_ex());
+    println! ("Ninth Euler is {:?}", eulers::nine::do_ex())
 }
