@@ -4,6 +4,8 @@ version = "0.1.0"
 authors = ["Stephen Lazaro <stephen.lazaro@gmail.com>"]
 
 [dependencies]
-num = "0.1.36"
-quickcheck = "0.3"
 itertools = "0.7.3"
+num = "0.1"
+
+[dev-dependencies]
+quickcheck = "0.3"

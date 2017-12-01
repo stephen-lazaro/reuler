@@ -16,8 +16,8 @@ pub fn is_pythagorean(target: i64, possible: Duple) -> bool {
 }
 
 pub fn do_ex() -> Option <Triplet> {
-    let space_a = (1..=1000);
-    let space_b = (1..=1000);
+    let space_a = (1..=1000).step_by(2);
+    let space_b = (1..=1000).step_by(2);
 
     space_a.cartesian_product(space_b)
         .filter(|x| match *x {

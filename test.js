@@ -1,0 +1,1 @@
+fetchAndInstantiate("./factorial.wasm", {})
