@@ -1,6 +1,8 @@
 #![feature(inclusive_range_syntax)]
 #![feature(iterator_step_by)]
 #[macro_use] extern crate itertools;
+#[allow(dead_code)]
+#[allow(unused_import)]
 mod eulers;
 
 
@@ -43,6 +45,7 @@ mod tests {
     use eulers::seven;
     use eulers::eight;
     use eulers::nine;
+    use eulers::ten;
 
     #[test]
     fn test_one () {
@@ -96,6 +99,12 @@ mod tests {
             Some(x) => x == answer,
             None => false
         })
+    }
+
+    #[test]
+    fn test_ten () {
+        let answer = 142913828922;
+        assert!(ten::do_ex() == answer)
     }
 
     #[test]

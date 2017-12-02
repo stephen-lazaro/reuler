@@ -60,7 +60,7 @@ pub fn prime_factors (prod: u64) -> HashSet <u64> {
 }
 
 pub fn primes_under (bound: u64) -> HashSet <u64> {
-    let subprimes = eratosthenes64 (100*bound);
+    let subprimes = eratosthenes64 (10000002*bound);
     let mut factors: HashSet <u64> = HashSet::new(); 
     for i in 2..bound {
         match subprimes.get((i - 2) as usize) {
