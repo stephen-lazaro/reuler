@@ -26,9 +26,15 @@ RUN set -eux; \
     rustc --version;
 
 RUN rustup default nightly && \
-      rustup update && \
-      cargo install cargo-wa && \
+      rustup update
+
+RUN git clone https://github.com/mgattozzi/cargo-wa && \
+      cd cargo-wa && \
+      cargo install && \
+      cd .. && \
+      rm -rf cargo-wa && \
       cargo wa setup
+
 
 RUN mkdir /usr/app
 
