@@ -5,6 +5,61 @@
 #[allow(unused_import)]
 mod eulers;
 
+#[no_mangle]
+pub fn one () -> i32 {
+    eulers::one::do_ex()
+}
+
+#[no_mangle]
+pub fn two () -> i32 {
+    eulers::two::do_ex()
+}
+
+#[no_mangle]
+pub fn three () -> i32 {
+    eulers::three::do_ex() as i32
+}
+
+#[no_mangle]
+pub fn five () -> i32 {
+    eulers::five::do_ex () as i32
+}
+
+#[no_mangle] 
+pub fn six () -> i32 {
+    eulers::six::do_ex () as i32
+}
+
+#[no_mangle]
+pub fn seven () -> i32 {
+    eulers::seven::do_ex () as i32
+}
+
+#[no_mangle]
+pub fn eight () -> i32 {
+    eulers::eight::do_ex () as i32
+}
+
+#[no_mangle]
+pub fn nine () -> [i32; 3] {
+    let mut answer: [i32; 3] = [0, 0, 0];
+    let nine = eulers::nine::do_ex();
+    match nine {
+        Some ((a, b, c)) => {
+            answer[0] = a as i32;
+            answer[1] = b as i32;
+            answer[2] = c as i32;
+            answer
+        }
+        None => answer
+    }
+}
+
+#[no_mangle]
+pub fn ten () -> i64 {
+    eulers::ten::do_ex() as i64
+}
+
 fn main () {
     println! ("First Euler is {0}", eulers::one::do_ex().to_string());
     println! ("Second Euler is {0}", eulers::two::do_ex().to_string());

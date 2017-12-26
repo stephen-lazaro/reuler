@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title> cargo wasm </title>
     <script>
-      fetch('reuler_front.wasm').then(response =>
+      fetch('reuler.wasm').then(response =>
         response.arrayBuffer()
       ).then(bytes =>
         WebAssembly.instantiate(bytes, {})

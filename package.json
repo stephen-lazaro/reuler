@@ -4,7 +4,7 @@
   "description": "Some WASM rust experiments",
   "main": "index.js",
   "scripts": {
-    "test": "echo 'TRUE'"
+    "test": "node --expose-wasm ./test_wasm.js"
   },
   "repository": {
     "type": "git",

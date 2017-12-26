@@ -22,11 +22,11 @@ matrix:
       node_js:
         - "8"
       script:
+        - cargo wa build --verbose
         - npm test
   allow_failures:
     - rust: beta
     - rust: stable
-    - node_js: "8"
 
 sudo: false
 

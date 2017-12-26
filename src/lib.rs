@@ -46,6 +46,7 @@ mod tests {
     use eulers::eight;
     use eulers::nine;
     use eulers::ten;
+    use eulers::shared;
 
     #[test]
     fn test_one () {
@@ -141,14 +142,14 @@ mod tests {
     #[test]
     fn test_divisor_power () {
         let mock = 27;
-        assert!(five::divisor_power(mock, 3, 0) == 3)
+        assert!(shared::divisors::divisor_power(mock, 3, 0) == 3)
     }
 
     #[test]
     fn test_divisor_power_2 () {
         let mock = 2432902008176640000;
-        println!("{}", five::divisor_power(mock, 2, 0).to_string());
-        assert!(five::divisor_power(mock, 2, 0) > 0)
+        println!("{}", shared::divisors::divisor_power(mock, 2, 0).to_string());
+        assert!(shared::divisors::divisor_power(mock, 2, 0) > 0)
     }
 
     #[test]

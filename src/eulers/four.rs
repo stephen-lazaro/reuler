@@ -1,7 +1,5 @@
-extern crate num;
 use std::cmp::max;
 use std::cmp::min;
-use self::num::traits::Num;
 
 /**
  * Finds largest palindromic product
@@ -9,7 +7,7 @@ use self::num::traits::Num;
 
 // I legit hate this type class derivation syntax...
 # [derive (Debug, PartialEq, Eq)]
-pub struct ProdPair <A : Num> (pub A, pub A, pub A);
+pub struct ProdPair <A> (pub A, pub A, pub A);
 
 pub fn is_palindrome <A : Clone + PartialEq> (digits: Vec <A>) -> bool {
     let mut reversed: Vec <A> = digits .clone ();
