@@ -25,12 +25,11 @@ matrix:
         - sudo apt-get update
         - sudo apt-get install cargo
         - ./dev-tools/test-entrypoint.sh
-        - npm test
   allow_failures:
     - rust: beta
     - rust: stable
 
-sudo: true
+sudo: required
 
 dist: trusty
 
