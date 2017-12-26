@@ -19,12 +19,13 @@ matrix:
         - cargo run
         - cargo test --verbose
     - language: node_js
+      services:
+        - docker
       node_js:
         - "8"
       script:
-        - sudo apt-get update
-        - sudo apt-get install cargo
-        - ./dev-tools/test-entrypoint.sh
+        - docker build -t slazaro/rust-wasm .
+        - docker run slazaro/rust-wasm
   allow_failures:
     - rust: beta
     - rust: stable
