@@ -22,13 +22,15 @@ matrix:
       node_js:
         - "8"
       script:
-        - cargo wa build --verbose
+        - sudo apt-get update
+        - sudo apt-get install cargo
+        - ./dev-tools/test-entrypoint.sh
         - npm test
   allow_failures:
     - rust: beta
     - rust: stable
 
-sudo: false
+sudo: true
 
 dist: trusty
 
