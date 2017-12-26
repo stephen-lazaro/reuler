@@ -17,4 +17,6 @@ fn main () {
     println! ("Eigth Euler is {}", eulers::eight::do_ex());
     println! ("Ninth Euler is {:?}", eulers::nine::do_ex());
     println! ("Tenth Euler is {}", eulers::ten::do_ex());
+    println! ("Eleventh Euler is {}", eulers::eleven::do_ex());
+    println! ("Twelfth Euler is {}", eulers::twelve::do_ex());
 }

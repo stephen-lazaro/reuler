@@ -1,7 +1,7 @@
 use std::collections::HashSet;
 use std::collections::HashMap;
-use eulers::shared::primes::prime_factors;
 use eulers::shared::primes::primes_under;
+use eulers::shared::divisors::divisor_power;
 
 /**
  * Calculates the LCM of 1..20
@@ -20,20 +20,6 @@ fn gcd_helper (a: u64, b: u64) -> u64 {
         a
     } else {
         gcd_helper (b, a % b)
-    }
-}
-
-// Assumes fact is a prime dividing prod
-pub fn divisor_power (prod: u64, fact: u64, acc: u64) -> u64 {
-    if fact == 0 || fact == 1 {
-       0
-    } else {
-        match (prod <= 1, prod.checked_div(fact)) {
-          (false, Some(rem)) => divisor_power(rem, fact, acc + 1),
-          (true, _) =>
-              if prod == 1 { acc } else { acc - 1 },
-          _ => 0
-        }
     }
 }
 
