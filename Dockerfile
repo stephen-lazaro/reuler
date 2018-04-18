@@ -33,7 +33,7 @@ RUN git clone https://github.com/mgattozzi/cargo-wa && \
       cargo install && \
       cd .. && \
       rm -rf cargo-wa && \
-      cargo wa setup
+      cargo wasm setup
 
 
 RUN mkdir /usr/app

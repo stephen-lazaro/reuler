@@ -1,5 +1,5 @@
 #! /usr/bin/env bash
 
-cargo wa build
+cargo wasm build
 ls site
 npm test
